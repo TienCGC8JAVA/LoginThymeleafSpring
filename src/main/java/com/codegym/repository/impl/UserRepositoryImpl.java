@@ -51,10 +51,10 @@ public class UserRepositoryImpl implements UserRepository {
   }
 
   @Override
-  public Long checkLogin(String account, String password){
+  public Long checkLogin(String email, String password){
     List<User> users = findAll();
     for (User user : users) {
-      if(user.getAccount().equals(account)){
+      if(user.getEmail().equals(email)){
         if(user.getPassword().equals(password)) return user.getId();
         else return 0L;
       }

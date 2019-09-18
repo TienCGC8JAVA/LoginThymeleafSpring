@@ -33,7 +33,7 @@ public class UserServiceImpl implements UserService {
   }
 
   @Override
-  public Long checkLogin(String account, String password) {
-    return userRepository.checkLogin(account, password);
+  public Long checkLogin(String email, String password) {
+    return userRepository.checkLogin(email, password);
   }
 }

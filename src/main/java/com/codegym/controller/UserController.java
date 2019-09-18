@@ -22,11 +22,11 @@ public class UserController {
   }
 
   @PostMapping("/userLogin")
-  public String userLogin(@RequestParam("account") String account, @RequestParam("password") String password, Model model){
-      Long indexOfLogin = userService.checkLogin(account, password);
+  public String userLogin(@RequestParam("email") String email, @RequestParam("password") String password, Model model){
+      Long indexOfLogin = userService.checkLogin(email, password);
         if (indexOfLogin > 0) return "success";
         if (indexOfLogin == 0) model.addAttribute("falsePassword", "You entered wrong your password!");
-        else model.addAttribute("falseAccount","You entered wrong your account!");
+        else model.addAttribute("falseEmail","You entered wrong your email!");
         return "login";
   }
 
